@@ -1,0 +1,134 @@
+---
+const educationData = {
+  languages: [
+    {
+      title: "Inglés",
+      level: "Avanzado (B2)",
+      institution: "Cambridge English Certificate",
+      year: "2021"
+    },
+    {
+      title: "Español",
+      level: "Nativo",
+      institution: "",
+      year: ""
+    }
+  ],
+  university: [
+    {
+      title: "Ingeniería Informática",
+      institution: "Universidad Tecnológica",
+      description: "Especialización en desarrollo de software y sistemas web",
+      year: "2018 - 2022"
+    },
+    {
+      title: "Máster en Desarrollo Web",
+      institution: "Instituto de Tecnologías Digitales",
+      description: "Enfoque en tecnologías frontend y backend modernas",
+      year: "2022 - 2023"
+    }
+  ],
+  selfTaught: [
+    {
+      title: "Desarrollo Frontend Avanzado",
+      platform: "Udemy",
+      description: "React, Vue, Angular y tecnologías modernas de frontend",
+      year: "2021"
+    },
+    {
+      title: "Desarrollo Backend con Node.js",
+      platform: "Platzi",
+      description: "Express, MongoDB, PostgreSQL y arquitecturas API REST",
+      year: "2022"
+    },
+    {
+      title: "DevOps y CI/CD",
+      platform: "Coursera",
+      description: "Docker, Kubernetes, GitHub Actions y despliegue continuo",
+      year: "2023"
+    }
+  ]
+};
+---
+
+<section id="education" class="py-20 px-4 bg-gray-800/50 cursor-default">
+  <div class="container mx-auto">
+    <h2 class="section-title p-3" data-aos="fade-up">Formación Académica</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <!-- Idiomas -->
+      <div class="card p-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white">Idiomas</h3>
+        </div>
+        
+        <div class="space-y-4">
+          {educationData.languages.map(lang => (
+            <div class="border-l-2 border-purple-500 pl-4 py-1 flex flex-row justify-between">
+              <div class="flex flex-col">
+                <h4 class="text-lg font-semibold text-white">{lang.title}</h4>
+                <p class="text-gray-300">{lang.level}</p>
+                {lang.institution && (
+                <p class="text-sm text-gray-400">{lang.institution}, {lang.year}</p>
+              )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Universitarios -->
+      <div class="card p-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white">Estudios Universitarios</h3>
+        </div>
+        
+        <div class="space-y-4">
+          {educationData.university.map(edu => (
+            <div class="border-l-2 border-purple-500 pl-4 py-1">
+              <h4 class="text-lg font-semibold text-white">{edu.title}</h4>
+              <p class="text-gray-300">{edu.institution}</p>
+              <p class="text-sm text-gray-400">{edu.description}</p>
+              <p class="text-sm text-purple-400">{edu.year}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Autodidactas -->
+      <div class="card p-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-white">Formación Autodidacta</h3>
+        </div>
+        
+        <div class="space-y-4">
+          {educationData.selfTaught.map(course => (
+            <div class="border-l-2 border-purple-500 pl-4 py-1">
+              <h4 class="text-lg font-semibold text-white">{course.title}</h4>
+              <p class="text-gray-300">{course.platform}</p>
+              <p class="text-sm text-gray-400">{course.description}</p>
+              <p class="text-sm text-purple-400">{course.year}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

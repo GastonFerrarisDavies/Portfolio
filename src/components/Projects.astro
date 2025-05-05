@@ -1,0 +1,101 @@
+---
+const projects = [
+  {
+    title: "E-commerce Platform",
+    description: "Plataforma de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración.",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    github: "https://github.com/username/ecommerce",
+    demo: "https://ecommerce-demo.com"
+  },
+  {
+    title: "Task Manager App",
+    description: "Aplicación de gestión de tareas con funcionalidades de arrastrar y soltar, etiquetas y colaboración en tiempo real.",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Vue.js", "Firebase", "Tailwind CSS"],
+    github: "https://github.com/username/task-manager",
+    demo: "https://task-manager-demo.com"
+  },
+  {
+    title: "Portfolio Website",
+    description: "Sitio web de portfolio personal con animaciones suaves y diseño responsive.",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["Astro", "Tailwind CSS", "TypeScript"],
+    github: "https://github.com/username/portfolio",
+    demo: "https://portfolio-demo.com"
+  },
+  {
+    title: "Weather Dashboard",
+    description: "Dashboard del clima que muestra pronósticos en tiempo real y datos históricos con visualizaciones interactivas.",
+    image: "/placeholder.svg?height=300&width=500",
+    tags: ["React", "D3.js", "OpenWeather API"],
+    github: "https://github.com/username/weather-dashboard",
+    demo: "https://weather-dashboard-demo.com"
+  }
+];
+---
+
+<section id="projects" class="py-20 px-4">
+  <div class="container mx-auto">
+    <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      {projects.map((project, index) => (
+        <div 
+          class="card group" 
+          data-aos="fade-up" 
+          data-aos-delay={100 * (index + 1)}
+        >
+          <div class="relative overflow-hidden">
+            <img 
+              src={project.image || "/placeholder.svg"} 
+              alt={project.title} 
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map(tag => (
+                  <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">{project.title}</h3>
+            <p class="text-gray-300 mb-4">{project.description}</p>
+            
+            <div class="flex gap-4">
+              <a 
+                href={project.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-300 flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Código
+              </a>
+              <a 
+                href={project.demo} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-300 flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
