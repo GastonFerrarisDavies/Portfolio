@@ -1,43 +1,43 @@
 ---
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Plataforma de comercio electrónico con carrito de compras, pasarela de pagos y panel de administración.",
-    image: "/placeholder.svg?height=300&width=500",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/username/ecommerce",
+    title: "Biskela",
+    description: "Plataforma de comercio electrónico con carrito de compras, perfil de usuario para gestión de datos y panel de administración.",
+    image: "/Biskela.jpeg",
+    tags: ["React", "Node.js", "Supabase", "TailwindCSS"],
+    github: "https://github.com/GastonFerrarisDavies/BiskelaBurguers.git",
     demo: "https://ecommerce-demo.com"
-  },
-  {
-    title: "Task Manager App",
-    description: "Aplicación de gestión de tareas con funcionalidades de arrastrar y soltar, etiquetas y colaboración en tiempo real.",
-    image: "/placeholder.svg?height=300&width=500",
-    tags: ["Vue.js", "Firebase", "Tailwind CSS"],
-    github: "https://github.com/username/task-manager",
-    demo: "https://task-manager-demo.com"
   },
   {
     title: "Portfolio Website",
     description: "Sitio web de portfolio personal con animaciones suaves y diseño responsive.",
-    image: "/placeholder.svg?height=300&width=500",
+    image: "/PortfolioWeb.jpeg",
     tags: ["Astro", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/username/portfolio",
-    demo: "https://portfolio-demo.com"
+    github: "https://github.com/GastonFerrarisDavies/Portfolio.git",
+    demo: "#"
   },
   {
-    title: "Weather Dashboard",
-    description: "Dashboard del clima que muestra pronósticos en tiempo real y datos históricos con visualizaciones interactivas.",
+    title: "NutryGym",
+    description: "Aplicación web de gimnasio para gestión de clientes, rutinas, dietas y seguimiento de progreso.",
     image: "/placeholder.svg?height=300&width=500",
-    tags: ["React", "D3.js", "OpenWeather API"],
-    github: "https://github.com/username/weather-dashboard",
-    demo: "https://weather-dashboard-demo.com"
+    tags: ["React", "Node.js", "Next.js", "Tailwind CSS", "Supabase"],
+    github: "https://github.com/PietrantuonoFranco/nutrigym.gitr",
+    demo: "#"
+  },
+  {
+    title: "Don Nicola (Trabajo en curso)",
+    description: "Aplicación web de gestión de producción de materia prima y productos terminados. Muestra de estadísticas y gráficos.",
+    image: "#",
+    tags: ["React", "Next.js", "BD Relacionales", "TailwindCSS"],
+    github: "#",
+    demo: "#"
   }
 ];
 ---
 
 <section id="projects" class="py-20 px-4">
   <div class="container mx-auto">
-    <h2 class="section-title" data-aos="fade-up">Mis Proyectos</h2>
+    <h2 class="section-title p-3" data-aos="fade-up">Mis Proyectos</h2>
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
       {projects.map((project, index) => (
