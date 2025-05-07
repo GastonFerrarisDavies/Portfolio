@@ -36,7 +36,7 @@ const navItems = [
   </nav>
   
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-gray-800 border-b border-gray-700">
+  <div id="mobile-menu" class="md:hidden fixed top-[57px] left-0 w-full transform transition-all duration-300 ease-in-out opacity-0 pointer-events-none bg-gray-800 border-b border-gray-700">
     <ul class="py-2 px-4 space-y-3">
       {navItems.map((item, index) => (
         <li data-aos="fade-down" data-aos-delay={100 * (index + 1)}>
@@ -59,13 +59,15 @@ const navItems = [
   
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('opacity-0');
+      mobileMenu.classList.toggle('pointer-events-none');
     });
     
     const mobileLinks = mobileMenu.querySelectorAll('a');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.add('opacity-0');
+        mobileMenu.classList.add('pointer-events-none');
       });
     });
   }
