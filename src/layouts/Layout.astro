@@ -2,6 +2,7 @@
 import { ViewTransitions } from 'astro:transitions';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import 'aos/dist/aos.css';
 
 interface Props {
 	title: string;
@@ -26,6 +27,12 @@ const { title } = Astro.props;
 		<main class="flex-grow">
 			<slot />
 		</main>
+		<script>
+			import AOS from 'aos';
+			document.addEventListener('DOMContentLoaded', function() {
+				AOS.init();
+			});
+		</script>
 		<Footer />
 	</body>
 </html>
