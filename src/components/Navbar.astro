@@ -1,73 +1,99 @@
 ---
 const navItems = [
   { name: "Inicio", url: "#hero" },
-  { name: "Estudios", url: "#education" },
+  { name: "Sobre mí", url: "#education" },
   { name: "Proyectos", url: "#projects" },
   { name: "Contacto", url: "#contact" }
 ];
 ---
 
-<header class="fixed w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800" data-aos="fade-down">
-  <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="#" class="text-xl md:text-2xl font-bold text-white flex items-center gap-2" data-aos="fade-right" data-aos-delay="100">
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-pink-500">Gastón Ferraris Davies</span>
+<header class="fixed w-full z-50 top-0">
+  <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/60"></div>
+  <nav class="relative container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="text-base font-bold text-zinc-100 tracking-tight">
+      GFD<span class="text-violet-500">.</span>
     </a>
-    
+
     <!-- Mobile menu button -->
-    <button id="menu-toggle" class="md:hidden text-gray-200 hover:text-white focus:outline-none" data-aos="fade-left" data-aos-delay="100">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <button id="menu-toggle" class="md:hidden text-zinc-400 hover:text-zinc-100 transition-colors p-1">
+      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
     </button>
-    
+
     <!-- Desktop menu -->
-    <ul class="hidden md:flex space-x-8">
-      {navItems.map((item, index) => (
-        <li data-aos="fade-down" data-aos-delay={100 * (index + 2)}>
-          <a 
-            href={item.url} 
-            class="text-gray-300 font-medium hover:text-white transition-colors duration-300"
+    <ul class="hidden md:flex items-center gap-8">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.url}
+            class="text-sm text-zinc-400 font-medium hover:text-zinc-100 transition-colors duration-200"
           >
             {item.name}
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href="/GastonFerrarisDavies.pdf"
+          download
+          class="text-sm px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white font-medium rounded-lg transition-colors duration-200"
+        >
+          Descargar CV
+        </a>
+      </li>
     </ul>
   </nav>
-  
+
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden fixed top-[57px] left-0 w-full transform transition-all duration-300 ease-in-out opacity-0 pointer-events-none bg-gray-800 border-b border-gray-700">
-    <ul class="py-2 px-4 space-y-3">
-      {navItems.map((item, index) => (
-        <li data-aos="fade-down" data-aos-delay={100 * (index + 1)}>
-          <a 
-            href={item.url} 
-            class="block py-2 text-gray-300 hover:text-white transition-colors duration-300"
+  <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full opacity-0 pointer-events-none transition-all duration-200 bg-zinc-950 border-b border-zinc-800">
+    <ul class="py-5 px-6 space-y-5">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.url}
+            class="block text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
           >
             {item.name}
           </a>
         </li>
       ))}
+      <li class="pt-4 border-t border-zinc-800">
+        <a
+          href="/GastonFerrarisDavies.pdf"
+          download
+          class="inline-flex text-sm px-4 py-2 bg-violet-600 hover:bg-violet-500 text-white font-medium rounded-lg transition-colors"
+        >
+          Descargar CV
+        </a>
+      </li>
     </ul>
   </div>
 </header>
 
 <script>
-  // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('opacity-0');
-      mobileMenu.classList.toggle('pointer-events-none');
+      const isOpen = !mobileMenu.classList.contains('opacity-0');
+      mobileMenu.classList.toggle('opacity-0', isOpen);
+      mobileMenu.classList.toggle('pointer-events-none', isOpen);
+      iconMenu?.classList.toggle('hidden', !isOpen);
+      iconClose?.classList.toggle('hidden', isOpen);
     });
-    
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('opacity-0');
-        mobileMenu.classList.add('pointer-events-none');
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        iconMenu?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
       });
     });
   }

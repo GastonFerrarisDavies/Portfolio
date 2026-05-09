@@ -2,113 +2,115 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer id="contact" class="bg-gray-900 border-t border-gray-800 pt-12 pb-6 px-4">
+<footer id="contact" class="border-t border-zinc-800/50 pt-24 pb-8 px-6">
   <div class="container mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+
+      <!-- Contact info -->
       <div data-aos="fade-right">
-        <h2 class="text-2xl font-bold text-white mb-4">Contacto</h2>
-        <p class="text-gray-300 mb-6 max-w-md">
-          ¿Interesado en trabajar juntos? Contactame a través de cualquiera de estos canales.
+        <span class="text-xs text-violet-400 uppercase tracking-[0.15em] font-medium">03 — Contacto</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-zinc-100 mt-2 mb-4">Hablemos</h2>
+        <p class="text-sm text-zinc-400 mb-10 max-w-sm leading-relaxed">
+          ¿Tenés un proyecto en mente o querés hablar sobre oportunidades? Escribime, respondo rápido.
         </p>
-        
+
         <div class="space-y-4">
-          <a 
-            href="mailto:gastonferrarisdavies@gmail.com" 
-            class="flex items-center gap-3 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+          <a
+            href="mailto:gastonferrarisdavies@gmail.com"
+            class="flex items-center gap-3 text-zinc-400 hover:text-zinc-100 transition-colors group"
           >
-            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="w-9 h-9 bg-zinc-800/80 group-hover:bg-zinc-800 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            gastonferrarisdavies@gmail.com
+            <span class="text-sm">gastonferrarisdavies@gmail.com</span>
           </a>
-          
-          <a 
-            href="https://linkedin.com/in/gastón-ferraris-davies-342426276" 
-            target="_blank" 
+
+          <a
+            href="https://linkedin.com/in/gastón-ferraris-davies-342426276"
+            target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-3 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+            class="flex items-center gap-3 text-zinc-400 hover:text-zinc-100 transition-colors group"
           >
-            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+            <div class="w-9 h-9 bg-zinc-800/80 group-hover:bg-zinc-800 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
               </svg>
             </div>
-            LinkedIn
+            <span class="text-sm">linkedin.com/in/gastón-ferraris-davies</span>
           </a>
-          
-          <a 
-            href="https://github.com/GastonFerrarisDavies" 
-            target="_blank" 
+
+          <a
+            href="https://github.com/GastonFerrarisDavies"
+            target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-3 text-gray-300 hover:text-purple-400 transition-colors duration-300"
+            class="flex items-center gap-3 text-zinc-400 hover:text-zinc-100 transition-colors group"
           >
-            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <div class="w-9 h-9 bg-zinc-800/80 group-hover:bg-zinc-800 rounded-lg flex items-center justify-center transition-colors flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
               </svg>
             </div>
-            GitHub
+            <span class="text-sm">github.com/GastonFerrarisDavies</span>
           </a>
         </div>
       </div>
-      
+
+      <!-- Contact form -->
       <div data-aos="fade-left">
-        <h2 class="text-2xl font-bold text-white mb-4">Envíame un mensaje</h2>
+        <h3 class="text-base font-semibold text-zinc-100 mb-6">Enviame un mensaje</h3>
         <form id="contact-form" class="space-y-4">
-          <div data-aos="fade-up" data-aos-delay="100">
-            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nombre</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name"
-              class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-              placeholder="Tu nombre"
-              required
-            />
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-xs font-medium text-zinc-400 mb-1.5">Nombre</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-3 py-2.5 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-violet-500/70 text-sm text-zinc-100 placeholder-zinc-600 transition-colors"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-medium text-zinc-400 mb-1.5">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-3 py-2.5 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-violet-500/70 text-sm text-zinc-100 placeholder-zinc-600 transition-colors"
+                placeholder="tu@email.com"
+                required
+              />
+            </div>
           </div>
-          
-          <div data-aos="fade-up" data-aos-delay="200">
-            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email"
-              class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-              placeholder="tu@email.com"
-              required
-            />
-          </div>
-          
-          <div data-aos="fade-up" data-aos-delay="300">
-            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Mensaje</label>
-            <textarea 
-              id="message" 
+
+          <div>
+            <label for="message" class="block text-xs font-medium text-zinc-400 mb-1.5">Mensaje</label>
+            <textarea
+              id="message"
               name="message"
-              rows="4" 
-              class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white"
-              placeholder="Tu mensaje..."
+              rows="5"
+              class="w-full px-3 py-2.5 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-violet-500/70 text-sm text-zinc-100 placeholder-zinc-600 transition-colors resize-none"
+              placeholder="Contame sobre tu proyecto..."
               required
             ></textarea>
           </div>
-          
-          <button 
-            type="submit" 
-            class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
-            data-aos="fade-up"
-            data-aos-delay="400"
+
+          <button
+            type="submit"
+            class="w-full px-5 py-2.5 bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Enviar Mensaje
           </button>
         </form>
       </div>
     </div>
-    
-    <div class="border-t border-gray-800 pt-6 text-center">
-      <p class="text-gray-400 text-sm">
-        &copy; {currentYear} Gastón Ferraris Davies.
-      </p>
+
+    <div class="border-t border-zinc-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-xs text-zinc-500">&copy; {currentYear} Gastón Ferraris Davies</p>
+      <p class="text-xs text-zinc-700">Construido con Astro & Tailwind CSS</p>
     </div>
   </div>
 </footer>
@@ -117,30 +119,21 @@ const currentYear = new Date().getFullYear();
   import emailjs from '@emailjs/browser';
   import { config } from '../config/config.js';
 
-  const templateId = config.templateId
+  const templateId = config.templateId;
   const publicKey = config.publicKey;
   const serviceId = config.serviceId;
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const submitButton = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
-  
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
     if (!form || !submitButton) return;
-    
+
     const originalText = submitButton.textContent;
-    
     try {
       submitButton.textContent = 'Enviando...';
       submitButton.disabled = true;
-      
-      await emailjs.sendForm(
-        serviceId,
-        templateId,
-        form,
-        publicKey
-      );
-      
+      await emailjs.sendForm(serviceId, templateId, form, publicKey);
       alert('¡Mensaje enviado con éxito!');
       form.reset();
     } catch (error) {
